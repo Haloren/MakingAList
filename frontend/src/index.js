@@ -5,7 +5,7 @@ const ITEMS_URL = `${BASE_URL}/items`
 
 
 
-
+// LIST TITLE - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
 const title = document.querySelector("header")
 document.addEventListener("DOMContentLoaded", () => loadLists())
 const loadLists = () => {
@@ -28,26 +28,7 @@ const renderLists = (listList) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ITEMS CONTAINER - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
 const container = document.getElementById("items-container")
 
 document.addEventListener("DOMContentLoaded", () => loadItems())
@@ -66,7 +47,7 @@ const renderItem = (itemList) => {
     const button = document.createElement("button")
     const h3 = document.createElement("h3")
     const input = document.createElement("input")
-    const p = document.createElement("p")
+    const button2 = document.createElement("button")
 
     button.setAttribute("class", "delete-btn")
     button.setAttribute("data-item-id", itemList.id)
@@ -80,12 +61,13 @@ const renderItem = (itemList) => {
     input.setAttribute("value", "1")
     input.innerHTML = "1"
 
-    p.setAttribute("class", "check-box")
-    p.innerHTML = "✔️"
+    button2.setAttribute("class", "check-box")
+    button2.setAttribute("id", "check-box")
+    button2.innerHTML = " " //✔️
 
     container.appendChild(button)
     container.appendChild(h3)
     container.appendChild(input)
-    container.appendChild(p)
+    container.appendChild(button2)
 
 }
