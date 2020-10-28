@@ -1,0 +1,15 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* COLOR PALETTE */
+:root {
+    --wh: #f8fff7;
+    --gry: #C0C0C0;
+    --blk: #030b38;
+    --red: #a01031;
+    --grn: #00ca11;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
