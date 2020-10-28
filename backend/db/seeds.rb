@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+List.delete_all
+List.create(name: "Grocery List")
+
+Item.delete_all
+items = [ 'Kale', 'Sprouts', 'Monster', 'Life Elixer']
+items.each do |item|
+    Item.create(content: item, list_id: List.first.id)
+end
