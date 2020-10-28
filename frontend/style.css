@@ -2,14 +2,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* COLOR PALETTE */
 :root {
-    --wh: #f8fff7;
-    --gry: #C0C0C0;
+    --wh: #ebebeb;
     --blk: #030b38;
     --red: #a01031;
-    --grn: #00ca11;
+    --grn: #00a00d;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
+
+body {
+    background-color: var(--wh);
+}
+
+.title {
+    background-color: var(--grn);
+    color: var(--wh);
+    padding: 2vh;
+    text-align: center;
+}
+
+.add-item {
+    margin: 1rem 0 1rem 1rem;
+}
+    .add-btn {
+        margin: 0;
+    }
+    .add-btn:hover {
+        cursor: pointer;
+    }
+
+.item-container {
+    display: grid;
+    grid-template-columns: 10% 40% 10% 10%;
+    grid-gap: 1rem;
+    /* grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+}
+    .item-title {
+        display: inline;
+        font-size: 1rem;
+        border-bottom: 2px solid var(--grn);
+        text-align: center;
+        color: var(--blk);
+        opacity: .666;
+    }
+
+
+
+
+
+
+
+
+
+/* COPYRIGHT */
+.copyright {
+    position: fixed;
+    bottom: 5px;
+    margin: 0 5px;
+  }
