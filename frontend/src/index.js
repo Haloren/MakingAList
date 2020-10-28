@@ -1,6 +1,52 @@
 const BASE_URL = "http://localhost:3000"
-// const LISTS_URL = `${BASE_URL}/lists`
+const LISTS_URL = `${BASE_URL}/lists`
 const ITEMS_URL = `${BASE_URL}/items`
+
+
+
+
+
+const title = document.querySelector("header")
+document.addEventListener("DOMContentLoaded", () => loadLists())
+const loadLists = () => {
+    fetch(LISTS_URL)
+    .then(resp => resp.json())
+    .then(json => {
+        renderLists(json)
+    })
+}
+const renderLists = (listList) => {
+    const h1 = document.createElement("h1")
+
+    h1.setAttribute("class", "title")
+    h1.setAttribute("id", "title")
+
+    h1.innerHTML = listList[0].name
+
+    title.appendChild(h1)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const container = document.getElementById("items-container")
 
@@ -31,7 +77,7 @@ const renderItem = (itemList) => {
     
     input.setAttribute("class", "qty")
     input.setAttribute("type", "number")
-    input.setAttribute("value", "0")
+    input.setAttribute("value", "1")
     input.innerHTML = "1"
 
     p.setAttribute("class", "check-box")
