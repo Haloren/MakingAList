@@ -84,8 +84,8 @@ const renderItem = (itemList) => {
     p.innerHTML = "✔️"
 
     container.appendChild(button)
-    button.appendChild(h3)
-    h3.appendChild(input)
-    input.appendChild(p)
+    container.appendChild(h3)
+    container.appendChild(input)
+    container.appendChild(p)
 
 }
