@@ -51,7 +51,7 @@ body {
         opacity: .666;
     }
 
-.item-container {
+.items-container {
     display: grid;
     grid-template-columns: 10% 40% 10% 10%;
     /* grid-row-start / grid-column-start / grid-row-end / grid-column-end */
