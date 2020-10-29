@@ -1,31 +1,29 @@
 class Item {
-    
-    constructor(item) {
+    constructor(item, id) {
         this.item = item;
-        // console.log(this)
+        this.id = id;
+        console.log(this)
         this.renderItemObj()
     }
-
     static getAllItems(){
         api.getItems().then(items => items.forEach(item => new Item(item)))
     }
 
     renderItemObj = () => {
         const div = document.createElement('div')
-        const button = document.createElement('button')
-        const h3 = document.createElement('h3')
-        const input = document.createElement('input')
-
         div.setAttribute('class', 'item')
+        div.setAttribute('data-item-id', this.item.id)
 
+        const button = document.createElement('button')
         button.setAttribute('class', 'delete-btn')
-        button.setAttribute('data-item-id', this.id)
         button.innerHTML = 'X'
         button.addEventListener('click', this.deleteItem)
-
+        
+        const h3 = document.createElement('h3')
         h3.setAttribute('class', 'content')
         h3.innerHTML = this.item.content
 
+        const input = document.createElement('input')
         input.setAttribute('type', 'checkbox')
         input.setAttribute('class', 'check-box')
     
@@ -34,7 +32,6 @@ class Item {
         div.appendChild(h3)
         div.appendChild(input)
     }
-
 
     createItem = (e) => {
         e.preventDefault()
@@ -68,8 +65,7 @@ class Item {
                 'Accept':'application/json'
             }
         }
-
-        fetch(`${ITEMS_URL}/${this.id}`, configObj)
+        fetch(`${api.root}/items/${this.item.id}`, configObj)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data);

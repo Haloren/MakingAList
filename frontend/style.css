@@ -28,7 +28,7 @@ body {
 }
 
 input {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .add-item {
@@ -59,12 +59,15 @@ input {
     }
         .delete-btn {
             border: .15rem solid var(--red);
-            border-radius: 100%;
+            /* border-radius: 100%; */
             text-align: center;
             color: var(--red);
             background-color: white;
             font-size: 1rem;
             font-weight: bolder; 
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
         }
             .delete-btn:hover {
                 cursor: pointer;
