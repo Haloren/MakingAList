@@ -68,48 +68,51 @@ input {
     grid-gap: .5rem;
     margin-left: 35%;
 }
-    .delete-btn {
-        border: .15rem solid var(--red);
-        border-radius: 100%;
-        text-align: center;
-        color: var(--red);
-        background-color: white;
-        font-size: 1rem;
-        font-weight: bolder; 
-    }
-        .delete-btn:hover {
-            cursor: pointer;
-            background-color: var(--red);
-            color: white;
-        }
     .item {
-        border-bottom: .1rem solid var(--blk);
-        cursor: default;
+        
     }
-    .qty {
-        text-align: center;
-        width: 115%;
-        font-size: 1rem;
-        background-color: var(--wh);
-        border: .1rem solid var(--blk);
-        border-radius: 5px;
-    }
-        .qty:hover {
+        .delete-btn {
+            border: .15rem solid var(--red);
+            border-radius: 100%;
+            text-align: center;
+            color: var(--red);
+            background-color: white;
+            font-size: 1rem;
+            font-weight: bolder; 
+        }
+            .delete-btn:hover {
+                cursor: pointer;
+                background-color: var(--red);
+                color: white;
+            }
+        .content {
+            border-bottom: .1rem solid var(--blk);
+            cursor: default;
+        }
+        .qty {
+            text-align: center;
+            width: 115%;
+            font-size: 1rem;
+            background-color: var(--wh);
+            border: .1rem solid var(--blk);
+            border-radius: 5px;
+        }
+            .qty:hover {
+                cursor: pointer;
+            }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button { 
+            opacity: 1;
             cursor: pointer;
         }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button { 
-        opacity: 1;
-        cursor: pointer;
-    }
-    .check-box {
-        width: 30px;
-        height: 30px;
-    }
-        .check-box:hover {
-            cursor: pointer;
+        .check-box {
+            width: 30px;
+            height: 30px;
         }
-
+            .check-box:hover {
+                cursor: pointer;
+            }
+        
 .copyright {
     position: sticky;
     bottom: 5px;

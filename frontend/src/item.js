@@ -5,21 +5,23 @@ class Item {
         this.content = content;
     }
 
-    BASE_URL = 'http://localhost:3000'
-    LISTS_URL = `${BASE_URL}/lists`
+    LISTS_URL = `${api}/lists`
 
     renderItem = () => {
+        const div = document.createElement('div')
         const button = document.createElement('button')
         const h3 = document.createElement('h3')
         const input = document.createElement('input')
         const input2 = document.createElement('input')
+
+        div.setAttribute('class', 'item')
 
         button.setAttribute('class', 'delete-btn')
         button.setAttribute('data-item-id', this.id)
         button.innerHTML = 'X'
         button.addEventListener('click', this.deleteItem)
 
-        h3.setAttribute('class', 'item')
+        h3.setAttribute('class', 'content')
         h3.innerHTML = this.content
 
         input.setAttribute('class', 'qty')
@@ -30,10 +32,11 @@ class Item {
         input2.setAttribute('type', 'checkbox')
         input2.setAttribute('class', 'check-box')
     
-        container.appendChild(button)
-        container.appendChild(h3)
-        container.appendChild(input)
-        container.appendChild(input2)
+        container.appendChild(div)
+        div.appendChild(button)
+        div.appendChild(h3)
+        div.appendChild(input)
+        div.appendChild(input2)
     }
 
 
