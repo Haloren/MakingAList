@@ -10,7 +10,7 @@ class Item {
         api.getItems().then(items => items.forEach(item => new Item(item)))
     }
 
-    renderItem = () => {
+    renderItemObj = () => {
         const div = document.createElement('div')
         const button = document.createElement('button')
         const h3 = document.createElement('h3')
@@ -56,7 +56,7 @@ class Item {
         // fetch(ITEMS_URL, configObj)
         // .then(resp = resp.json())
         // .then(json =>
-        //     json.message ? alert(json.message) : renderItem(json)
+        //     json.message ? alert(json.message) : renderItemObj(json)
         // )
     }
     
