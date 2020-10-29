@@ -47,21 +47,6 @@ input {
             color: white;
         }
 
-.title-container {
-    display: grid;
-    grid-template-columns: 5% 30% 5% 5%;
-    /* grid-row-start / grid-column-start / grid-row-end / grid-column-end */
-    grid-gap: .5rem;
-    margin-left: 35%;
-    padding-bottom: .5rem;
-}
-    .item-title {
-        display: inline;
-        font-size: 1rem;
-        color: var(--blk);
-        opacity: .666;
-    }
-
 .items-container {
     display: grid;
     grid-template-columns: 5% 30% 5% 5%;
@@ -87,9 +72,9 @@ input {
             }
         .content {
             border-bottom: .1rem solid var(--blk);
-            cursor: default;
+            /* cursor: default; */
         }
-        .qty {
+        /* .qty {
             text-align: center;
             width: 115%;
             font-size: 1rem;
@@ -104,7 +89,7 @@ input {
         input[type=number]::-webkit-outer-spin-button { 
             opacity: 1;
             cursor: pointer;
-        }
+        } */
         .check-box {
             width: 30px;
             height: 30px;

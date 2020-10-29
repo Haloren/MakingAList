@@ -3,9 +3,12 @@ class Item {
     constructor(id, content) {
         this.id = id;
         this.content = content;
+        console.log(this)
     }
 
-    LISTS_URL = `${api}/lists`
+    static getAllItems(){
+        api.getItems().then(items => items.forEach(item => new Item(item)))
+    }
 
     renderItem = () => {
         const div = document.createElement('div')
@@ -24,10 +27,10 @@ class Item {
         h3.setAttribute('class', 'content')
         h3.innerHTML = this.content
 
-        input.setAttribute('class', 'qty')
-        input.setAttribute('type', 'number')
-        input.setAttribute('value', '1')
-        input.innerHTML = '1'
+        // input.setAttribute('class', 'qty')
+        // input.setAttribute('type', 'number')
+        // input.setAttribute('value', '1')
+        // input.innerHTML = '1'
 
         input2.setAttribute('type', 'checkbox')
         input2.setAttribute('class', 'check-box')
