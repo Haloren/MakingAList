@@ -3,8 +3,6 @@ const LISTS_URL = `${BASE_URL}/lists`
 const ITEMS_URL = `${BASE_URL}/items`
 
 
-
-
 // LIST TITLE - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
 const title = document.querySelector('header')
 document.addEventListener('DOMContentLoaded', () => loadLists())
@@ -51,7 +49,8 @@ const renderItem = (itemList) => {
 
     button.setAttribute('class', 'delete-btn')
     button.setAttribute('data-item-id', itemList.id)
-    button.innerHTML = '❌'
+    button.innerHTML = 'X' // ❌
+    button.addEventListener('click', deleteItem)
 
     h3.setAttribute('class', 'item')
     h3.innerHTML = itemList.content
@@ -69,4 +68,34 @@ const renderItem = (itemList) => {
     container.appendChild(input)
     container.appendChild(input2)
 
+    document.getElementById("add-btn").addEventListener('submit', createItem)
+}
+
+const createItem = (e) => {
+    e.preventDefault()
+    const configObj = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept':'application/json'
+        }
+        // body: JSON.stringify(content: e.target.content.value})
+    }
+    // fetch(ITEMS_URL, configObj)
+    // .then(resp = resp.json())
+    // .then(json =>
+    //     json.message ? alert(json.message) : renderItem(json)
+    // )
+}
+
+const deleteItem = (e) => {
+//     e.preventDefault()
+//     const configObj = {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept':'application/json'
+//         }
+//         fetch(``)
+//     }
 }
