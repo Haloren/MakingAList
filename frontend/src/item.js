@@ -1,9 +1,9 @@
 class Item {
     
-    constructor(id, content) {
-        this.id = id;
-        this.content = content;
-        console.log(this)
+    constructor(item) {
+        this.item = item;
+        // console.log(this)
+        this.renderItemObj()
     }
 
     static getAllItems(){
@@ -15,7 +15,6 @@ class Item {
         const button = document.createElement('button')
         const h3 = document.createElement('h3')
         const input = document.createElement('input')
-        const input2 = document.createElement('input')
 
         div.setAttribute('class', 'item')
 
@@ -25,21 +24,15 @@ class Item {
         button.addEventListener('click', this.deleteItem)
 
         h3.setAttribute('class', 'content')
-        h3.innerHTML = this.content
+        h3.innerHTML = this.item.content
 
-        // input.setAttribute('class', 'qty')
-        // input.setAttribute('type', 'number')
-        // input.setAttribute('value', '1')
-        // input.innerHTML = '1'
-
-        input2.setAttribute('type', 'checkbox')
-        input2.setAttribute('class', 'check-box')
+        input.setAttribute('type', 'checkbox')
+        input.setAttribute('class', 'check-box')
     
         container.appendChild(div)
         div.appendChild(button)
         div.appendChild(h3)
         div.appendChild(input)
-        div.appendChild(input2)
     }
 
 

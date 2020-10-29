@@ -1,6 +1,6 @@
 class List {
-    constructor(name){
-        this.name = name
+    constructor(list){
+        this.list = list
         // console.log(this)
         this.renderListObj()
     }
@@ -14,7 +14,7 @@ class List {
         listObj.classList.add('title') 
         listObj.setAttribute('id', 'title')
         this.listObj = listObj
-        listObj.innerHTML = this.name.name
+        listObj.innerHTML = this.list.name
 
         title.appendChild(listObj)
     }

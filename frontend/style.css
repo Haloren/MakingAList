@@ -48,13 +48,14 @@ input {
         }
 
 .items-container {
-    display: grid;
-    grid-template-columns: 5% 30% 5% 5%;
-    grid-gap: .5rem;
-    margin-left: 35%;
+    
 }
     .item {
-        
+        display: grid;
+        grid-template-columns: 5% 30% 5% 5%;
+        grid-gap: 1rem;
+        margin-left: 35%;
+        padding-top: .75rem;
     }
         .delete-btn {
             border: .15rem solid var(--red);
