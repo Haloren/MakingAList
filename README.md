@@ -12,7 +12,9 @@ Exploration goals for this project:
 - Cd into the frontend folder and run explorer.exe index.html
 
 # How to Use
-Create a grocery list, check off items as needed, and delete items from the list.
+Create a grocery list, that everyone can access.
+Add items and remove items as needed.
+Check off items as you shop.
 - Add an item by typing in the name of the item and clicking "+"
     - Quantity: input a number or increase/decrease the box under "Qty" 
 - Remove an item by clicking the red "X" next to the item
