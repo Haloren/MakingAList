@@ -2,18 +2,36 @@ const BASE_URL = 'http://localhost:3000'
 const LISTS_URL = `${BASE_URL}/lists`
 const ITEMS_URL = `${BASE_URL}/items`
 
-
-// LIST TITLE - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
 const title = document.querySelector('header')
-document.addEventListener('DOMContentLoaded', () => loadLists())
+
 const loadLists = () => {
     fetch(LISTS_URL)
     .then(resp => resp.json())
     .then(json => {
-        renderLists(json)
+        renderList(json)
     })
 }
-const renderLists = (listList) => {
+
+const loadItems = () => {
+    fetch(ITEMS_URL)
+    .then(resp => resp.json())
+    // .then(json => {
+    //     console.log(json)
+    // })
+    .then(data => {
+        data.forEach(item => {
+            let itemObj = new Item(item.id, item.content); //creating object
+            itemObj.renderItem(); // calling instance method on object
+        })
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadLists();
+    loadItems();
+})
+
+const renderList = (listList) => {
     const h1 = document.createElement('h1')
 
     h1.setAttribute('class', 'title')
@@ -24,78 +42,5 @@ const renderLists = (listList) => {
     title.appendChild(h1)
 }
 
-
-
-// ITEMS CONTAINER - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
 const container = document.getElementById('items-container')
-
-document.addEventListener('DOMContentLoaded', () => loadItems())
-
-const loadItems = () => {
-    fetch(ITEMS_URL)
-    .then(resp => resp.json())
-    // .then(json => {
-    //     console.log(json)
-    // })
-    .then(json => {
-        json.forEach(item => renderItem(item))
-    })
-}
-const renderItem = (itemList) => {
-    const button = document.createElement('button')
-    const h3 = document.createElement('h3')
-    const input = document.createElement('input')
-    const input2 = document.createElement('input')
-
-    button.setAttribute('class', 'delete-btn')
-    button.setAttribute('data-item-id', itemList.id)
-    button.innerHTML = 'X' // ❌
-    button.addEventListener('click', deleteItem)
-
-    h3.setAttribute('class', 'item')
-    h3.innerHTML = itemList.content
-    
-    input.setAttribute('class', 'qty')
-    input.setAttribute('type', 'number')
-    input.setAttribute('value', '1')
-    input.innerHTML = '1'
-
-    input2.setAttribute('type', 'checkbox')
-    input2.setAttribute('class', 'check-box') //✔️
-
-    container.appendChild(button)
-    container.appendChild(h3)
-    container.appendChild(input)
-    container.appendChild(input2)
-
-    document.getElementById("add-btn").addEventListener('submit', createItem)
-}
-
-const createItem = (e) => {
-    e.preventDefault()
-    const configObj = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept':'application/json'
-        }
-        // body: JSON.stringify(content: e.target.content.value})
-    }
-    // fetch(ITEMS_URL, configObj)
-    // .then(resp = resp.json())
-    // .then(json =>
-    //     json.message ? alert(json.message) : renderItem(json)
-    // )
-}
-
-const deleteItem = (e) => {
-//     e.preventDefault()
-//     const configObj = {
-//         method: 'DELETE',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept':'application/json'
-//         }
-//         fetch(``)
-//     }
-}
+const addBtn = document.getElementById("add-btn") //.addEventListener('submit', createItem)

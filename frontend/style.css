@@ -41,11 +41,11 @@ input {
         background-color: white;
         border: .1rem solid var(--blk);
     }
-    .add-btn:hover {
-        cursor: pointer;
-        background-color: green;
-        color: white;
-    }
+        .add-btn:hover {
+            cursor: pointer;
+            background-color: green;
+            color: white;
+        }
 
 .title-container {
     display: grid;
@@ -58,7 +58,6 @@ input {
     .item-title {
         display: inline;
         font-size: 1rem;
-        /* text-align: center; */
         color: var(--blk);
         opacity: .666;
     }
@@ -78,11 +77,11 @@ input {
         font-size: 1rem;
         font-weight: bolder; 
     }
-    .delete-btn:hover {
-        cursor: pointer;
-        background-color: var(--red);
-        color: white;
-    }
+        .delete-btn:hover {
+            cursor: pointer;
+            background-color: var(--red);
+            color: white;
+        }
     .item {
         border-bottom: .1rem solid var(--blk);
         cursor: default;
@@ -95,9 +94,9 @@ input {
         border: .1rem solid var(--blk);
         border-radius: 5px;
     }
-    .qty:hover {
-        cursor: pointer;
-    }
+        .qty:hover {
+            cursor: pointer;
+        }
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button { 
         opacity: 1;

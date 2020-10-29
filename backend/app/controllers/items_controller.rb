@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     end
 
     def create
-        list = List.first
+        list = List.first #list = List.find_by(list_id: params[:list_id])
         #byebug
         item = list.items.new(item_params)
         if item.save
@@ -23,8 +23,15 @@ class ItemsController < ApplicationController
 
     def destroy
         item = Item.all.find_by(id: params[:id])
-        item.destroy
-        render json: item
+
+        if item #.valid?
+            # DELETE SUCCESSFUL
+            item.destroy
+            render json: {success: true}
+        else
+            # DELETE NOT SUCCESSFUL
+            render json: {success: false}
+        end
     end
 
     private
