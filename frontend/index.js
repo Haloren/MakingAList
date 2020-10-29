@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = 'http://localhost:3000'
 const LISTS_URL = `${BASE_URL}/lists`
 const ITEMS_URL = `${BASE_URL}/items`
 
@@ -6,8 +6,8 @@ const ITEMS_URL = `${BASE_URL}/items`
 
 
 // LIST TITLE - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
-const title = document.querySelector("header")
-document.addEventListener("DOMContentLoaded", () => loadLists())
+const title = document.querySelector('header')
+document.addEventListener('DOMContentLoaded', () => loadLists())
 const loadLists = () => {
     fetch(LISTS_URL)
     .then(resp => resp.json())
@@ -16,10 +16,10 @@ const loadLists = () => {
     })
 }
 const renderLists = (listList) => {
-    const h1 = document.createElement("h1")
+    const h1 = document.createElement('h1')
 
-    h1.setAttribute("class", "title")
-    h1.setAttribute("id", "title")
+    h1.setAttribute('class', 'title')
+    h1.setAttribute('id', 'title')
 
     h1.innerHTML = listList[0].name
 
@@ -29,9 +29,9 @@ const renderLists = (listList) => {
 
 
 // ITEMS CONTAINER - MOVE THIS TO A NEW FILE AND MAKE INTO A CLASS
-const container = document.getElementById("items-container")
+const container = document.getElementById('items-container')
 
-document.addEventListener("DOMContentLoaded", () => loadItems())
+document.addEventListener('DOMContentLoaded', () => loadItems())
 
 const loadItems = () => {
     fetch(ITEMS_URL)
@@ -44,30 +44,29 @@ const loadItems = () => {
     })
 }
 const renderItem = (itemList) => {
-    const button = document.createElement("button")
-    const h3 = document.createElement("h3")
-    const input = document.createElement("input")
-    const button2 = document.createElement("button")
+    const button = document.createElement('button')
+    const h3 = document.createElement('h3')
+    const input = document.createElement('input')
+    const input2 = document.createElement('input')
 
-    button.setAttribute("class", "delete-btn")
-    button.setAttribute("data-item-id", itemList.id)
-    button.innerHTML = "❌"
+    button.setAttribute('class', 'delete-btn')
+    button.setAttribute('data-item-id', itemList.id)
+    button.innerHTML = '❌'
 
-    h3.setAttribute("class", "item")
+    h3.setAttribute('class', 'item')
     h3.innerHTML = itemList.content
     
-    input.setAttribute("class", "qty")
-    input.setAttribute("type", "number")
-    input.setAttribute("value", "1")
-    input.innerHTML = "1"
+    input.setAttribute('class', 'qty')
+    input.setAttribute('type', 'number')
+    input.setAttribute('value', '1')
+    input.innerHTML = '1'
 
-    button2.setAttribute("class", "check-box")
-    button2.setAttribute("id", "check-box")
-    button2.innerHTML = " " //✔️
+    input2.setAttribute('type', 'checkbox')
+    input2.setAttribute('class', 'check-box') //✔️
 
     container.appendChild(button)
     container.appendChild(h3)
     container.appendChild(input)
-    container.appendChild(button2)
+    container.appendChild(input2)
 
 }

@@ -5,7 +5,7 @@
     --wh: #ebebeb;
     --blk: #030b38;
     --red: #a01031;
-    --grn: #00a00d;
+    --blu: #264ebb;
 }
 
 *, *::before, *::after {
@@ -17,11 +17,11 @@
 body {
     background-color: var(--wh);
     text-align: center;
-    border: .2rem solid var(--grn);
+    border: .2rem solid var(--blu);
 }
 
 .title {
-    background-color: var(--grn);
+    background-color: var(--blu);
     color: var(--wh);
     padding: 2vh;
     font-size: 2.5rem;
@@ -40,7 +40,7 @@ input {
     }
     .add-btn:hover {
         cursor: pointer;
-        background-color: var(--grn);
+        background-color: var(--blu);
         color: var(--wh);
     }
 
@@ -97,22 +97,17 @@ input {
         cursor: pointer;
     }
     .check-box {
-        border: .1rem solid var(--blk);
-        border-radius: 5px;
-        text-align: center;
-        background-color: var(--wh);
-        padding: 0;
-        margin: 0;
+        width: 30px;
+        height: 30px;
     }
-    .check-box:hover {
-        cursor: pointer;
-        background-color: var(--grn);
-    }
+        .check-box:hover {
+            cursor: pointer;
+        }
 
 .copyright {
     position: sticky;
     bottom: 5px;
-    background-color: var(--grn);
+    background-color: var(--blu);
     color: var(--wh);
     margin-bottom: 0;
     margin-top: 5%;
