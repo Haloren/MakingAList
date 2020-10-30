@@ -51,25 +51,7 @@ class Item {
     //     }
     // static deleteEventListener(){
     //     button.addEventListener('click', this.deleteItem)
-    // }
-
-    createItem = (e) => {
-        e.preventDefault()
-        const configObj = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept':'application/json'
-            }
-            // body: JSON.stringify({})
-        }
-        // fetch(ITEMS_URL, configObj)
-        // .then(resp = resp.json())
-        // .then(json =>
-        //     json.message ? alert(json.message) : renderItemObj(json)
-        // )
-    }
-    
+    // }    
 
     deleteItem = (e) => {
         // WORKFLOW

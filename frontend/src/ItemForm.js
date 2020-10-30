@@ -10,7 +10,13 @@ class ItemForm {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target, this)
+        // console.log(e.target, this)
+        // console.log(this.getFormData(e.target))
+        const data = this.getFormData(e.target)
+        api.postItem(data).then(console.log)
     }
 
+    getFormData = (form) => {
+        return {content: form.name.value}
+    }
 }
