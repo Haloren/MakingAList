@@ -48,7 +48,7 @@ input {
         }
 
 .items-container {
-    
+    background-color: var(--wh);
 }
     .item {
         display: grid;

@@ -2,9 +2,10 @@ class ApiService {
     constructor(root) {
         this.root = root
     }
-    getLists = () => fetch(`${this.root}/lists`).then(resp => resp.json())
+    getLists = () => fetch(`${this.root}/lists`).then(resp => resp.json()) // API LISTS
 
-    getItems = () => fetch(`${this.root}/items`).then(resp => resp.json())
+    getItems = () => fetch(`${this.root}/items`).then(resp => resp.json()) // API ITEMS
+    
     postItem = (item) => {
         return fetch(`${this.root}/items`, {
             method: 'POST',
@@ -19,6 +20,7 @@ class ApiService {
         //     data.message ? alert(data.message) : renderItemObj(data);
         // )
     }
+    
     deleteItem = () => {
         return fetch(`${api.root}/items/${this.item.id}`, {
             method: 'DELETE',
