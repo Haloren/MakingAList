@@ -25,11 +25,9 @@ class ItemsController < ApplicationController
         item = Item.all.find_by(id: params[:id])
 
         if item #.valid?
-            # DELETE SUCCESSFUL
             item.destroy
             render json: {success: true}
         else
-            # DELETE NOT SUCCESSFUL
             render json: {success: false}
         end
     end

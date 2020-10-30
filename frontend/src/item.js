@@ -2,7 +2,7 @@ class Item {
 
     static all = []
 
-    constructor(item, id) {
+    constructor(item) {
         this.item = item;
         // console.log(this)
         this.renderItem() //this.renderItemObj()
@@ -32,57 +32,14 @@ class Item {
         <input type="checkbox" class="check-box">
         `
     }
-
+//document.querySelector(".item").remove()
     setEventListeners(){
-        // console.log(this)
+        console.log(this)
         // this.itemObj.getElementsByClassName("delete-btn").addEventListener('click', this.deleteItemObj)
+        const fullItem = document.querySelector(".item")
     }
-    deleteItemObj = () => {
+    deleteItem = () => {
         // ApiService.deleteItem(this.item.id).then(() => this.itemObj.remove())
     }
 
-    // renderItemObj = () => {
-    //     const div = document.createElement('div')
-    //     div.setAttribute('class', 'item')
-    //     div.setAttribute('data-item-id', this.item.id)
-
-    //     const button = document.createElement('button')
-    //     button.setAttribute('class', 'delete-btn')
-    //     button.innerHTML = 'X'
-    //     button.addEventListener('click', this.deleteItem) // *EventListener
-        
-    //     const h3 = document.createElement('h3')
-    //     h3.setAttribute('class', 'content')
-    //     h3.setAttribute('id', 'content')
-    //     h3.innerHTML = this.item.content
-
-    //     const input = document.createElement('input')
-    //     input.setAttribute('type', 'checkbox')
-    //     input.setAttribute('class', 'check-box')
-    //     // input.setAttribute('onclick', 'checkBlue()') // Toggle Blue text 
-    
-    //     container.appendChild(div)
-    //     div.appendChild(button)
-    //     div.appendChild(h3)
-    //     div.appendChild(input)
-    // }
-
-    // deleteItem = (e) => {
-    //     const configObj = {
-    //         method: 'DELETE',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept':'application/json'
-    //         }
-    //     }
-    //     fetch(`${api.root}/items/${this.item.id}`, configObj)
-    //         .then(resp => resp.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             console.log(this);
-    //         });
-    // }
-    // static findById(id){
-    //     return this.all.find(itemContainer => itemContainer.item.id === parseInt(id))
-    // }
 }

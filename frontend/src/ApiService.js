@@ -16,23 +16,12 @@ class ApiService {
             body: JSON.stringify(item),
         })
         .then(resp => resp.json())
-        // .then(data =>
-        //     data.message ? alert(data.message) : renderItemObj(data);
-        // )
     }
     
-    deleteItem = () => {
-        return fetch(`${api.root}/items/${this.item.id}`, {
+    destroyItem = (id) => {
+        return fetch(`${api.root}/items/${id}`, {
             method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept':'application/json'
-            }
         })
         .then(resp => resp.json())       
-        // .then(data => {
-        // console.log(data);
-        // console.log(this);
-        // });
     }
 }
