@@ -13,7 +13,8 @@ class ItemForm {
         // console.log(e.target, this)
         // console.log(this.getFormData(e.target))
         const data = this.getFormData(e.target)
-        api.postItem(data).then(console.log)
+        // api.postItem(data).then(console.log)
+        api.postItem(data).then(item => new Item(item))
     }
 
     getFormData = (form) => {

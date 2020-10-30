@@ -22,4 +22,36 @@ class ApiService {
         //     data.message ? alert(data.message) : renderItemObj(data);
         // )
     }
+
+    deleteItem = () => {
+        const configObj = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept':'application/json'
+            }
+        }
+        fetch(`${api.root}/items/${this.item.id}`, configObj)
+            .then(resp => resp.json())
+            .then(data => {
+            console.log(data);
+            console.log(this);
+        });
+    }
 }
+
+// deleteItem = (e) => {
+//     const configObj = {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept':'application/json'
+//         }
+//     }
+//     fetch(`${api.root}/items/${this.item.id}`, configObj)
+//         .then(resp => resp.json())
+//         .then(data => {
+//             console.log(data);
+//             console.log(this);
+//         });
+// }

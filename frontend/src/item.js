@@ -1,9 +1,14 @@
 class Item {
+
+    static all = []
+
     constructor(item, id) {
         this.item = item;
         this.id = id;
         // console.log(this)
         this.renderItemObj()
+
+        this.constructor.all.push(this)
     }
     static getAllItems(){
         api.getItems().then(items => items.forEach(item => new Item(item)))
@@ -33,46 +38,25 @@ class Item {
         div.appendChild(input)
     }
 
-    // renderItemObj = () => {
-    //     const itemObj = document.createElement('div')
-    //     itemObj.setAttribute('class', 'item')
-    //     itemObj.setAttribute('data-item-id', this.item.id)
-    //     this.itemObj = itemObj
-    //     this.renderInnerHTML()
-    //     container.appendChild(itemObj)
-    // }
-    //     renderInnerHTML = () => {
-    //         const { button, content, checkbox } = this.item
-    //         this.itemObj.innerHTML = `
-    //         <button class='delete-btn'> X </button>
-    //         <h3 class='content'>${this.item.content}</h3>
-    //         <input type="checkbox" class="check-box"></input>
-    //         `
+    //remove from back
+    // deleteItem = (e) => {
+    //     const configObj = {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept':'application/json'
+    //         }
     //     }
-    // static deleteEventListener(){
-    //     button.addEventListener('click', this.deleteItem)
-    // }    
+    //     fetch(`${api.root}/items/${this.item.id}`, configObj)
+    //         .then(resp => resp.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             console.log(this);
+    //         });
+    // }
 
-    deleteItem = (e) => {
-        // WORKFLOW
-        // FIRST WE NEED TO DELETE FROM DATABASE
-        // CONFIRM THAT IT HAS BEEN DELETED FROM THE DATABASE
-        // IF YES => DELETE FROM FRONT END
-        // IF NOT => DISPLAY ERROR MSG
-
-        const configObj = {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept':'application/json'
-            }
-        }
-        fetch(`${api.root}/items/${this.item.id}`, configObj)
-            .then(resp => resp.json())
-            .then(data => {
-                console.log(data);
-                console.log(this);
-            });
+    //remove from front
+    static findById(id){
+        return this.all.find(itemContainer => itemContainer.item.id === parseInt(id))
     }
-
 }
