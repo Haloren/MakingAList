@@ -76,7 +76,7 @@ input {
             }
         .content {
             border-bottom: .1rem solid var(--blk);
-            /* cursor: default; */
+            cursor: default;
         }
         /* .qty {
             text-align: center;

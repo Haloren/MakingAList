@@ -6,6 +6,7 @@ class Item {
         this.item = item;
         // console.log(this)
         this.renderItem() //this.renderItemObj()
+        this.setEventListeners()
 
         this.constructor.all.push(this)
     }
@@ -30,6 +31,14 @@ class Item {
         <h3 class="content" id="content">${this.item.content}</h3>
         <input type="checkbox" class="check-box">
         `
+    }
+
+    setEventListeners(){
+        // console.log(this)
+        // this.itemObj.getElementsByClassName("delete-btn").addEventListener('click', this.deleteItemObj)
+    }
+    deleteItemObj = () => {
+        // ApiService.deleteItem(this.item.id).then(() => this.itemObj.remove())
     }
 
     // renderItemObj = () => {
