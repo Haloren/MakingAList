@@ -1,12 +1,16 @@
 class ItemForm {
-    constructor(){
 
+    constructor(){
+        this.addEventListeners()
     }
 
+    addEventListeners(){
+        form.addEventListener('submit', this.handleSubmit); 
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e.target, this)
+    }
 
 }
-
-{/* <form id="add-item" class="add-item">
-        <input type="text" name="name" placeholder="Add Item">
-        <input type="submit" id="add-btn" class="add-btn" value="+">
-</form> */}

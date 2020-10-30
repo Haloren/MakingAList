@@ -2,7 +2,7 @@ class Item {
     constructor(item, id) {
         this.item = item;
         this.id = id;
-        console.log(this)
+        // console.log(this)
         this.renderItemObj()
     }
     static getAllItems(){
@@ -17,7 +17,7 @@ class Item {
         const button = document.createElement('button')
         button.setAttribute('class', 'delete-btn')
         button.innerHTML = 'X'
-        button.addEventListener('click', this.deleteItem)
+        button.addEventListener('click', this.deleteItem) // *EventListener
         
         const h3 = document.createElement('h3')
         h3.setAttribute('class', 'content')
@@ -32,6 +32,26 @@ class Item {
         div.appendChild(h3)
         div.appendChild(input)
     }
+
+    // renderItemObj = () => {
+    //     const itemObj = document.createElement('div')
+    //     itemObj.setAttribute('class', 'item')
+    //     itemObj.setAttribute('data-item-id', this.item.id)
+    //     this.itemObj = itemObj
+    //     this.renderInnerHTML()
+    //     container.appendChild(itemObj)
+    // }
+    //     renderInnerHTML = () => {
+    //         const { button, content, checkbox } = this.item
+    //         this.itemObj.innerHTML = `
+    //         <button class='delete-btn'> X </button>
+    //         <h3 class='content'>${this.item.content}</h3>
+    //         <input type="checkbox" class="check-box"></input>
+    //         `
+    //     }
+    // static deleteEventListener(){
+    //     button.addEventListener('click', this.deleteItem)
+    // }
 
     createItem = (e) => {
         e.preventDefault()
