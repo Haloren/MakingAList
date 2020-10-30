@@ -26,11 +26,13 @@ class Item {
         
         const h3 = document.createElement('h3')
         h3.setAttribute('class', 'content')
+        h3.setAttribute('id', 'content')
         h3.innerHTML = this.item.content
 
         const input = document.createElement('input')
         input.setAttribute('type', 'checkbox')
         input.setAttribute('class', 'check-box')
+        // input.setAttribute('onclick', 'checkBlue()')
     
         container.appendChild(div)
         div.appendChild(button)
@@ -38,7 +40,6 @@ class Item {
         div.appendChild(input)
     }
 
-    //remove from back
     // deleteItem = (e) => {
     //     const configObj = {
     //         method: 'DELETE',
@@ -54,9 +55,7 @@ class Item {
     //             console.log(this);
     //         });
     // }
-
-    //remove from front
-    static findById(id){
-        return this.all.find(itemContainer => itemContainer.item.id === parseInt(id))
-    }
+    // static findById(id){
+    //     return this.all.find(itemContainer => itemContainer.item.id === parseInt(id))
+    // }
 }
