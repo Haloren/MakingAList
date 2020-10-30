@@ -32,14 +32,28 @@ class Item {
         <input type="checkbox" class="check-box">
         `
     }
-//document.querySelector(".item").remove()
-    setEventListeners(){
-        console.log(this)
-        // this.itemObj.getElementsByClassName("delete-btn").addEventListener('click', this.deleteItemObj)
-        const fullItem = document.querySelector(".item")
-    }
+
     deleteItem = () => {
-        // ApiService.deleteItem(this.item.id).then(() => this.itemObj.remove())
+        api.destroyItem(this.item.id).then(resp => resp.ok && this.item.remove())
     }
 
+    setEventListeners(){
+        container.addEventListener('click', this.handleClick)
+        // container.querySelector(".item").addEventListener('click', this.handleClick)
+    }
+
+    handleClick = (e) => {
+        const item = e.target.closest(".item")
+        const id = item.dataset.itemId
+        // const fullItem = item.findById(id)
+        console.log(id)
+        // const fullItem = this.findbyId(id)
+        if (e.target.classList.contains("check-box")){
+            // console.log(this.item.id)
+        }
+        if (e.target.classList.contains("delete-btn")){
+            // console.log(this)
+            // this.deleteItem()
+        }
+    }
 }
