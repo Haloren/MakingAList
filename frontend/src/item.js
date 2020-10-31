@@ -43,14 +43,12 @@ class Item {
     }
 
     handleClick = (e) => {
-        const item = e.target.closest(".item")
-        const id = item.dataset.itemId
-        // console.log(id)
-        // const fullItem = this.findbyId(id)
         if (e.target.classList.contains("check-box")){
-            console.log(id)
+            // console.log("check-box")
+            // e.target.parentElement.dataset
         }
         if (e.target.classList.contains("delete-btn")){
+            // this.deleteItem()
             e.target.parentElement.remove()
         }
     }
