@@ -33,10 +33,6 @@ class Item {
         `
     }
 
-    deleteItem = () => {
-        api.destroyItem(this.item.id).then(resp => resp.ok && this.item.remove())
-    }
-
     setEventListeners(){
         container.addEventListener('click', this.handleClick)
         // container.querySelector(".item").addEventListener('click', this.handleClick)
@@ -49,6 +45,8 @@ class Item {
         }
         if (e.target.classList.contains("delete-btn")){
             // this.deleteItem()
+            const itemId = e.target.closest(".item").dataset.itemId
+            api.destroyItem(itemId)
             e.target.parentElement.remove()
         }
     }
