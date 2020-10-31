@@ -45,15 +45,13 @@ class Item {
     handleClick = (e) => {
         const item = e.target.closest(".item")
         const id = item.dataset.itemId
-        // const fullItem = item.findById(id)
-        console.log(id)
+        // console.log(id)
         // const fullItem = this.findbyId(id)
         if (e.target.classList.contains("check-box")){
-            // console.log(this.item.id)
+            console.log(id)
         }
         if (e.target.classList.contains("delete-btn")){
-            // console.log(this)
-            // this.deleteItem()
+            e.target.parentElement.remove()
         }
     }
 }
