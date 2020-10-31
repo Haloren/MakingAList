@@ -21,7 +21,6 @@ class ApiService {
     destroyItem = (id) => {
         return fetch(`${this.root}/items/${id}`, {
             method: 'DELETE',
-        })
-        .then(resp => resp.json())       
+        })      
     }
 }

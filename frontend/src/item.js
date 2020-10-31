@@ -19,6 +19,7 @@ class Item {
         const itemObj = document.createElement('div')
         itemObj.setAttribute('class', 'item')
         itemObj.setAttribute('data-item-id', this.item.id)
+        itemObj.style.color = "#030b38" //var(--blk)
         this.itemObj = itemObj
         
         this.renderInnerHTML()
@@ -39,15 +40,33 @@ class Item {
     }
 
     handleClick = (e) => {
+        const itemId = e.target.closest(".item").dataset.itemId
+
         if (e.target.classList.contains("check-box")){
-            // console.log("check-box")
-            // e.target.parentElement.dataset
+            const blue = "#264ebb"
+            const black = "#030b38"
+            const fontColor = e.target.closest(".item")
+            if (fontColor.style.color === blue) { 
+                fontColor.style.color = black; 
+            }else{
+                fontColor.style.color = blue;
+            }
+            
         }
         if (e.target.classList.contains("delete-btn")){
-            // this.deleteItem()
-            const itemId = e.target.closest(".item").dataset.itemId
             api.destroyItem(itemId)
             e.target.parentElement.remove()
         }
     }
+
+    // toggleColor = () => {
+    //     const blue = "#264ebb"
+    //     const black = "#030b38"
+    //     const fontColor = e.target.closest(".item")
+    //     if (fontColor.style.color === black) { 
+    //         fontColor.style.color = blue; 
+    //     }else{
+    //         fontColor.style.color = black;
+    //     }
+    // }
 }

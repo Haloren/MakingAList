@@ -15,6 +15,8 @@ class ItemForm {
         const data = this.getFormData(e.target)
         // api.postItem(data).then(console.log)
         api.postItem(data).then(item => new Item(item))
+
+        form.reset()
     }
 
     getFormData = (form) => {
