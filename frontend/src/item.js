@@ -36,7 +36,6 @@ class Item {
 
     setEventListeners(){
         container.addEventListener('click', this.handleClick)
-        // container.querySelector(".item").addEventListener('click', this.handleClick)
     }
 
     handleClick = (e) => {
@@ -50,23 +49,11 @@ class Item {
                 fontColor.style.color = black; 
             }else{
                 fontColor.style.color = blue;
-            }
-            
+            }  
         }
         if (e.target.classList.contains("delete-btn")){
             api.destroyItem(itemId)
             e.target.parentElement.remove()
         }
     }
-
-    // toggleColor = () => {
-    //     const blue = "#264ebb"
-    //     const black = "#030b38"
-    //     const fontColor = e.target.closest(".item")
-    //     if (fontColor.style.color === black) { 
-    //         fontColor.style.color = blue; 
-    //     }else{
-    //         fontColor.style.color = black;
-    //     }
-    // }
 }
