@@ -34,13 +34,13 @@ class Item {
         `
     }
 
-    setEventListeners(){
-        container.addEventListener('click', this.handleClick)
+    setEventListeners = () =>{
+        this.itemObj.addEventListener('click', this.handleClick)
     }
 
     handleClick = (e) => {
-        const itemId = e.target.closest(".item").dataset.itemId
-
+        // console.log(this)
+        const itemId = this.item.id
         if (e.target.classList.contains("check-box")){
             const blue = "#264ebb"
             const black = "#030b38"
@@ -53,7 +53,17 @@ class Item {
         }
         if (e.target.classList.contains("delete-btn")){
             api.destroyItem(itemId).then(resp => resp.ok)
-            e.target.parentElement.remove()
+
+            // remove from all array?
+            // const index = Item.all.indexOf(this)
+            // Item.all.splice(index, 1)
+
+            this.itemObj.remove()
         }
     }
+    
 }
+
+//Item.all.find(itemInstance => itemInstance.item.id === 53)
+//Item.all.filter(itemInstance => ItemInstance.item.content.include(“Kale”))
+//Item.all.find(itemInstance => itemInstance.item.id === 53).itemObj.remove()

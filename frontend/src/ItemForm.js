@@ -14,7 +14,7 @@ class ItemForm {
         // console.log(this.getFormData(e.target))
         const data = this.getFormData(e.target)
         // api.postItem(data).then(console.log)
-        api.postItem(data).then(item => new Item(item))
+        api.postItem(data).then(item => new Item(item)) // if statement to handle undefined
 
         form.reset()
     }
