@@ -52,7 +52,7 @@ class Item {
             }  
         }
         if (e.target.classList.contains("delete-btn")){
-            api.destroyItem(itemId)
+            api.destroyItem(itemId).then(resp => resp.ok)
             e.target.parentElement.remove()
         }
     }

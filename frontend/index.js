@@ -7,3 +7,4 @@ const container = document.getElementById('items-container') // Items in a list 
 const itemFormInstance = new ItemForm
 List.getAllLists()
 Item.getAllItems()
+
