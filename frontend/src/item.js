@@ -19,7 +19,7 @@ class Item {
         const itemObj = document.createElement('div')
         itemObj.setAttribute('class', 'item')
         itemObj.setAttribute('data-item-id', this.item.id)
-        itemObj.style.color = "#030b38" //var(--blk)
+        itemObj.style.color = `${black}` 
         this.itemObj = itemObj
         
         this.renderInnerHTML()
@@ -41,24 +41,22 @@ class Item {
     handleClick = (e) => {
         // console.log(this)
         const itemId = this.item.id
-        if (e.target.classList.contains("check-box")){
-            const blue = "#264ebb"
-            const black = "#030b38"
-            const fontColor = e.target.closest(".item")
-            if (fontColor.style.color === blue) { 
-                fontColor.style.color = black; 
-            }else{
-                fontColor.style.color = blue;
-            }  
-        }
+
         if (e.target.classList.contains("delete-btn")){
             api.destroyItem(itemId).then(resp => resp.ok)
-
-            // remove from all array?
-            // const index = Item.all.indexOf(this)
-            // Item.all.splice(index, 1)
-
             this.itemObj.remove()
+        }
+
+        if (e.target.classList.contains("check-box")){
+            const fontColor = e.target.closest(".item")
+            const deleteDecoration = e.target.closest(".delete-btn")
+            if (fontColor.style.color === black) { 
+                fontColor.style.color = blue; 
+                fontColor.style.textDecoration = "line-through";
+            }else{
+                fontColor.style.color = black;
+                fontColor.style.textDecoration = "";
+            }  
         }
     }
     
