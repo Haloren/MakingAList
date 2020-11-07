@@ -60,8 +60,12 @@ class Item {
         }
     }
     
+    // static findById(id){
+    //     // console.log(id)
+    //     return this.all.find(itemInstance => itemInstance.item.id === parseInt(id))
+    // }
+    static filterItems(content){
+        console.log(content)
+        // return this.all.filter(itemInstance => itemInstance.item.content.include("Kale"))
+    }
 }
-
-//Item.all.find(itemInstance => itemInstance.item.id === 53)
-//Item.all.filter(itemInstance => ItemInstance.item.content.include(“Kale”))
-//Item.all.find(itemInstance => itemInstance.item.id === 53).itemObj.remove()
