@@ -1,6 +1,9 @@
 class Item {
 
     static all = []
+    // static sort = "alphabetical"
+    // static filter = "all"
+    // static search =""
 
     constructor(item) {
         this.item = item;
@@ -59,13 +62,21 @@ class Item {
             }  
         }
     }
-    
+
     // static findById(id){
     //     // console.log(id)
     //     return this.all.find(itemInstance => itemInstance.item.id === parseInt(id))
     // }
-    static filterItems(content){
-        console.log(content)
+    static filterItems(){
         // return this.all.filter(itemInstance => itemInstance.item.content.include("Kale"))
+    }
+
+    // localeCompare()
+    static sortItems(){
+
+    }
+
+    static renderAllItems(){
+    
     }
 }
