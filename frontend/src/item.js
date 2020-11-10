@@ -1,7 +1,7 @@
 class Item {
 
     static all = []
-    // static sort = "alphabetical"
+    static sort = "alphabetical"
     // static filter = "all"
     // static search =""
 
@@ -71,12 +71,15 @@ class Item {
         // return this.all.filter(itemInstance => itemInstance.item.content.include("Kale"))
     }
 
-    // localeCompare()
     static sortItems(){
-
+        localeCompare()
+        if (this.sort === "alphabetical"){
+            return [...this.all].sort((itemA, itemB) => itemA.item.content.localeCompare(itemB.item.content))
+        }
     }
 
     static renderAllItems(){
-    
+        container.innerHTML = ""
+        this.sortItems().forEach(itemCard = itemCard.renderItem())
     }
 }
